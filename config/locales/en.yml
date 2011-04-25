@@ -7,7 +7,7 @@ en:
       long: "%A %B %e, %Y"
 
   home:
-    show:
+    header:
       main_title: "The directory of the best salsa courses and parties of Paris"
       sub_title: "Mobile optimized web-site (iPhone, Android, iPad...)"
       

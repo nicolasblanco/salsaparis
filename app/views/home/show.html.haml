@@ -1,10 +1,6 @@
 = render "shared/footer"
 
-#homeheader{ style: "text-align: center;" }
-  %h1#logo
-    = image_tag "logo_salsaparis.png", size: "264x160"
-  %h2{ style: "font-size: 1.2em;" }= t(".main_title")
-  %h3{ style: "font-size: 1em;" }= t(".sub_title")
+= render "home/header"
 
 %ul{ data: { role: "listview", inset: "true", theme: "a", dividertheme: "b" } }
   %li
