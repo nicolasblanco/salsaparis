@@ -4,15 +4,15 @@
   %h1#logo
     = image_tag "logo_salsaparis.png", size: "264x160"
 
-%ul{ data: { role: "listview", inset: "true", theme: "c", dividertheme: "b" } }
+%ul{ data: { role: "listview", inset: "true", theme: "a", dividertheme: "b" } }
   %li
     = link_to "Les soirées", root_path
 
-%ul{ data: { role: "listview", inset: "true", theme: "c", dividertheme: "b" } }
+%ul{ data: { role: "listview", inset: "true", theme: "a", dividertheme: "b" } }
   - @events.each do |event|
     %li
       = link_to event, "data-ajax" => false do
         - if event.photo
           = image_tag event.photo.thumb("115x115#").url
         %h3= event.name
-        %p= truncate(event.description_fr)
+        %p= truncate(event.description(I18n.locale), :length => 200)

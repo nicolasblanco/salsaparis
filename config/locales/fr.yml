@@ -184,6 +184,8 @@ fr:
   home:
     show:
       courses: "Les cours"
+      main_title: "L'annuaire des meilleurs cours et soirées salsa de Paris"
+      sub_title: "Site optimisé pour les navigateurs mobiles (iPhone, Android, iPad...)"
       
   events:
     show:

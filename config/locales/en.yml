@@ -5,3 +5,9 @@ en:
   date:
     formats:
       long: "%A %B %e, %Y"
+
+  home:
+    show:
+      main_title: "The directory of the best salsa courses and parties of Paris"
+      sub_title: "Mobile optimized web-site (iPhone, Android, iPad...)"
+      

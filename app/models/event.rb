@@ -2,7 +2,8 @@ require "net/http"
 
 class Event
   include Mongoid::Document
-
+  include Mongoid::Timestamps
+  
   field :name
   field :slug
 
