@@ -21,6 +21,7 @@ gem 'redcarpet'
 
 # Deploy with Capistrano
 # gem 'capistrano'
+gem 'rack-cache', require: 'rack/cache'
 
 group :production do
   gem 'aws-s3', require: 'aws/s3'
@@ -29,7 +30,6 @@ end
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
 group :development, :test do
-  gem 'rack-cache'
   gem 'ruby-debug19', require: 'ruby-debug'
   gem "rspec-rails"
   gem "factory_girl"

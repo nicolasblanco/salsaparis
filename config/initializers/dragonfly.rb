@@ -1,5 +1,4 @@
 require 'dragonfly'
-require 'rack/cache' unless Rails.env.production?
 require 'uri'
 
 ### The dragonfly app ###
