@@ -21,8 +21,8 @@
           = link_to "English", "/en"
         - else
           = link_to "Français", "/"
-        - unless content_for(:header_content) || current_page?(:controller => "/home", :action => "show")
-          = link_to "Home", "/", "data-icon" => "home", "data-iconpos" => "notext", "data-direction" => "reverse", "data-ajax" => false, :class => "ui-btn-right"
+        - unless content_for?(:header_content) || %w(/ /fr /en).include?(request.fullpath)
+          = link_to "Home", I18n.locale == :en ? "/en" : "/", "data-icon" => "home", "data-iconpos" => "notext", "data-direction" => "reverse", "data-ajax" => false, :class => "ui-btn-right"
         
         = yield :header_content
       %div(data-role="content")
