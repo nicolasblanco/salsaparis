@@ -38,7 +38,7 @@ class Event
   image_accessor :photo
 
   validates_presence_of :street, :name
-  before_save :do_geocode!
+  before_validation :do_geocode!
   before_save :generate_slug, on: :create
 
   def self.find_by_slug!(slug)
@@ -46,7 +46,7 @@ class Event
   end
 
   def do_geocode!(force = false)
-    return unless force || street_changed?
+    return unless force || new_record? || street_changed?
     
     response = Net::HTTP.get_response(URI.parse("http://maps.googleapis.com/maps/api/geocode/json?address=#{Rack::Utils.escape(street)}&sensor=false"))
     json = ActiveSupport::JSON.decode(response.body)
