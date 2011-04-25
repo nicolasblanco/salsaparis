@@ -4,7 +4,7 @@
 %ul(data-role="listview" data-inset="false" data-theme="c" data-dividertheme="b" data-split-icon="gear")
   - @events.each do |event|
     %li
-      = link_to "#" do
+      = link_to event do
         - if event.photo
           = image_tag event.photo.thumb("115x115#").url
         %h3= event.name

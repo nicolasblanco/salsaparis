@@ -34,5 +34,15 @@
   %li
     %h3= t(".street")
     %p= @event.street
+  - if @event.facebook_link?
+    %li
+      = link_to @event.facebook_link do
+        %h3= t(".facebook_link")
+        %p= @event.facebook_link
+  - if @event.forum_link?
+    %li
+      = link_to @event.forum_link do
+        %h3= t(".forum_link")
+        %p= @event.forum_link
 
 #map-canvas{ style: "width: 100%; height: 600px" }

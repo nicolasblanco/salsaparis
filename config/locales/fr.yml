@@ -192,3 +192,11 @@ fr:
       more_information: "Informations"
       dance_style: "Style"
       street: "Localisation"
+      facebook_link: "Lien facebook"
+      forum_link: "Lien vers le forum"
+
+  dance_styles:
+    portorican: "Portoricaine"
+    cuban: "Cubaine"
+    mixed: "Mixte"
+    

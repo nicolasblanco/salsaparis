@@ -21,6 +21,7 @@ class Event
   field :lng, type: Float
 
   field :facebook_link
+  field :forum_link
 
   field :dance_style, default: "mixed"
 
