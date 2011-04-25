@@ -1,0 +1,13 @@
+- content_for :footer do
+  = link_to "Nouveau", [:new, :admin, :event], "data-role" => "button", "data-icon" => "plus"
+  
+%ul(data-role="listview" data-inset="false" data-theme="c" data-dividertheme="b" data-split-icon="gear")
+  - @events.each do |event|
+    %li
+      = link_to "#" do
+        - if event.photo
+          = image_tag event.photo.thumb("115x115#").url
+        %h3= event.name
+        %p= truncate(event.description_fr)
+      = link_to "Edit", [:edit, :admin, event]
+      

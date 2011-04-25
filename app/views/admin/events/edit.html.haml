@@ -1,0 +1,6 @@
+- content_for :header_content do
+  = link_to "Supprimer", [:admin, @event], :method => :delete, :confirm => "Voulez-vous vraiment supprimer cet événement ?", "data-ajax" => false, "data-role" => "button", "data-icon" => "delete", "data-theme" => "a", :class => "ui-btn-right"
+
+= form_for [:admin, @event], :html => { :multipart => true, "data-ajax" => false } do |f|
+  = render f
+  

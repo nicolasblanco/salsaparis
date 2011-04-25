@@ -1,0 +1,49 @@
+%div(data-role="fieldcontain")
+  = form.label :name
+  = form.text_field :name
+
+%div(data-role="fieldcontain")
+  = form.label :description_fr
+  = form.text_area :description_fr
+
+%div(data-role="fieldcontain")
+  = form.label :description_en
+  = form.text_area :description_en
+
+%div(data-role="fieldcontain")
+  = form.label :street
+  = form.text_area :street
+
+%div(data-role="fieldcontain")
+  = form.label :photo
+  = form.file_field :photo
+
+%div(data-role="fieldcontain")
+  = form.label :event_type
+  = form.select :event_type, ["party", "course"]
+
+%div(data-role="fieldcontain")
+  = form.label :dance_style
+  = form.select :dance_style, ["cuban", "portorican", "mixed"]
+
+%div(data-role="fieldcontain")
+  = form.label :date_start
+  = form.text_field :date_start, :value => @event.date_start? ? I18n.l(@event.date_start) : ""
+
+%div(data-role="fieldcontain")
+  = form.label :date_end
+  = form.text_field :date_end, :value => @event.date_end? ? I18n.l(@event.date_end) : ""
+
+%div(data-role="fieldcontain")
+  = form.label :facebook_link
+  = form.text_field :facebook_link
+
+%div(data-role="fieldcontain")
+  = form.label :editors_field
+  = form.text_field :editors_field
+
+%fieldset(class="ui-grid-a")
+  .ui-block-a
+    = link_to "Annuler", [:admin, :events], "data-role" => "button", "data-theme" => "d"
+  .ui-block-b
+    %button(type="submit" data-theme="e") Sauvegarder

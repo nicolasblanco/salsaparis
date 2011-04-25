@@ -1,0 +1,38 @@
+= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false"
+
+:javascript
+  $(document).ready(function() {
+    var latlng = new google.maps.LatLng(#{@event.lat}, #{@event.lng});
+    var myOptions = {
+      zoom: 13,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+
+    var marker = new google.maps.Marker({
+      position: latlng, 
+      map: map, 
+      title:"#{@event.street}"
+    });
+  });
+
+%h1= @event.name
+
+%p{ style: "float:left; padding: 1em;" }
+  = image_tag @event.photo.thumb("115x115#").url
+
+%p{ style: "margin: 3em" }= markdown(@event.description(I18n.locale))
+
+%div{ style: "clear: both;" }
+
+%ul{ data: { role: "listview", inset: "true", theme: "c", dividertheme: "b" } }
+  %li(data-role="list-divider")= t(".more_information")
+  %li
+    %h3= t(".dance_style")
+    %p= t("dance_styles.#{@event.dance_style? ? @event.dance_style : "unknown"}")
+  %li
+    %h3= t(".street")
+    %p= @event.street
+
+#map-canvas{ style: "width: 100%; height: 600px" }

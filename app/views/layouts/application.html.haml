@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %meta(charset="utf-8")
+    %meta(name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1")
+    %title Salsaparis.fr
+    %link(rel="stylesheet"  href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css")
+    %script(type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js")
+    %script(type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js")
+    = javascript_include_tag "rails"
+    
+    = csrf_meta_tag
+
+  %body
+    %div(data-role="page" data-theme="e" id="home")
+      %div(data-role="header")
+        %h1 Salsaparis.fr
+        - if I18n.locale == :fr
+          = link_to "English", "/en"
+        - else
+          = link_to "Français", "/"
+        - unless content_for(:header_content) || current_page?(:controller => "/home", :action => "show")
+          = link_to "Home", "/", "data-icon" => "home", "data-iconpos" => "notext", "data-direction" => "reverse", "data-ajax" => false, :class => "ui-btn-right"
+        
+        = yield :header_content
+      %div(data-role="content")
+        = yield
+      
+      %div(data-role="footer" class="ui-bar")
+        %h1 Salsaparis - A project by Nicolas Blanco - Love Live Dance!
+    
+    = yield :other_pages
+    
