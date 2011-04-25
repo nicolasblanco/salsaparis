@@ -1,5 +1,5 @@
-- content_for :footer do
-  = link_to "Nouveau", [:new, :admin, :event], "data-role" => "button", "data-icon" => "plus"
+- content_for :header_content do
+  = link_to "Nouveau", [:new, :admin, :event], "data-role" => "button", "data-icon" => "plus", "data-theme" => "a", :class => "ui-btn-right"
   
 %ul(data-role="listview" data-inset="false" data-theme="c" data-dividertheme="b" data-split-icon="gear")
   - @events.each do |event|
