@@ -5,7 +5,7 @@ require 'uri'
 app = Dragonfly[:images]
 app.configure_with(:rails)
 app.configure_with(:imagemagick)
-app.configure_with(:heroku, 'salsaparis') if Rails.env.production?
+app.configure_with(:heroku, 'salsaparis.fr') if Rails.env.production?
 
 ### Extend Mongoid ###
 app.define_macro_on_include(Mongoid::Document, :image_accessor)
